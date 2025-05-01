@@ -9,38 +9,77 @@
 <body>
 
   <div class="container">
-    <h2>Railway Ticket Booking System</h2>
+    <h2>🚆 Railway Ticket Booking System</h2>
 
-    <label for="from">From:</label>
-    <select id="from">
-      <option value="Delhi">Delhi</option>
-      <option value="Mumbai">Mumbai</option>
-      <option value="Kolkata">Kolkata</option>
-      <option value="Chennai">Chennai</option>
-      <option value="Bangalore">Bangalore</option>
-    </select>
+    <form id="bookingForm">
+      <div class="form-group">
+        <label for="name">Passenger Name:</label>
+        <input type="text" id="name" required>
+      </div>
 
-    <label for="to">To:</label>
-    <select id="to">
-      <option value="Delhi">Delhi</option>
-      <option value="Mumbai">Mumbai</option>
-      <option value="Kolkata">Kolkata</option>
-      <option value="Chennai">Chennai</option>
-      <option value="Bangalore">Bangalore</option>
-    </select>
+      <div class="form-group">
+        <label for="age">Age:</label>
+        <input type="number" id="age" min="1" required>
+      </div>
 
-    <label>Class:</label>
-    <div class="radio-group">
-      <input type="radio" id="sleeper" name="class" value="Sleeper" checked>
-      <label for="sleeper">Sleeper</label>
-      <input type="radio" id="ac" name="class" value="AC">
-      <label for="ac">AC</label>
-    </div>
+      <div class="form-group">
+        <label>Gender:</label>
+        <div class="radio-group">
+          <input type="radio" id="male" name="gender" value="Male" checked>
+          <label for="male">Male</label>
+          <input type="radio" id="female" name="gender" value="Female">
+          <label for="female">Female</label>
+        </div>
+      </div>
 
-    <label for="tickets">Number of Tickets:</label>
-    <input type="number" id="tickets" min="1" value="1">
+      <div class="form-group">
+        <label for="from">From:</label>
+        <select id="from" required>
+          <option value="">Select</option>
+          <option>Delhi</option>
+          <option>Mumbai</option>
+          <option>Kolkata</option>
+          <option>Chennai</option>
+          <option>Bangalore</option>
+        </select>
+      </div>
 
-    <button onclick="bookTicket()">Book Ticket</button>
+      <div class="form-group">
+        <label for="to">To:</label>
+        <select id="to" required>
+          <option value="">Select</option>
+          <option>Delhi</option>
+          <option>Mumbai</option>
+          <option>Kolkata</option>
+          <option>Chennai</option>
+          <option>Bangalore</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="date">Travel Date:</label>
+        <input type="date" id="date" required>
+      </div>
+
+      <div class="form-group">
+        <label>Class:</label>
+        <div class="radio-group">
+          <input type="radio" id="sleeper" name="class" value="Sleeper" checked>
+          <label for="sleeper">Sleeper</label>
+          <input type="radio" id="ac" name="class" value="AC">
+          <label for="ac">AC</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="tickets">No. of Tickets:</label>
+        <input type="number" id="tickets" min="1" value="1" required>
+      </div>
+
+      <button type="submit">🎟️ Book Ticket</button>
+    </form>
+
+    <div id="confirmation" class="hidden"></div>
   </div>
 
   <script src="script.js"></script>
